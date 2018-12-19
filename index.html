@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="fontawesome/js/fontawesome-all.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<header>
+    <a onclick="showhome()"><i class="fas fa-home"></i>Home</a>
+    <a class="right" onclick="showsetting()"><i class="fas fa-cog"></i>Settings</a>
+    <a class="right">
+        <i class="fas fa-user"></i>Account
+        <div class="account">
+            <div class="line">Michael</div>
+            <div class="line" onclick="alert('You have logged out.')">Log out</div>
+        </div>
+    </a>
+    <a class="right">
+        <i class="fas fa-exclamation-circle"></i>Notification
+        <div class="notification">
+            <div class="line">You have 3 quizzes to do.</div>
+            <div class="line">You have a new message.</div>
+        </div>
+    </a>
+    <a class="right" onclick="showmail()"><i class="fas fa-envelope"></i>Mail</a>
+    <a class="right" onclick="showchat()"><i class="fas fa-comments"></i>Live Chat</a>
+    <a class="right" onclick="showpeople()"><i class="fas fa-users"></i>People</a>
+    <input type="text" title="Search">
+    <a class="right"><i class="fas fa-search"></i></a>
+</header>
+<main>
+    <div id="item1">lactic acid Quiz</div>
+    <div id="item2" onclick="abc(1)">Concept</div>
+    <div id="item3" onclick="abc(2)">Quiz</div>
+    <div id="item4" onclick="abc(3)">Form</div>
+    <div id="item5" onclick="abc(4)">About</div>
+    <div id="item6"></div>
+</main>
+<div class="quiz-review" id="quiz-review">
+    <div class="hide" onclick="hidereview()">Hide</div>
+    <div class="question">1.When energy-depleted elements associated with a proton are accepted by an organic molecule, the process is called</div>
+    <div class="wrong">Your answer: aerobic</div>
+    <div class="correct">Correct answer: fermentation</div>
+    <div class="question">2.An example of anaerobic would be</div>
+    <div class="wrong">Your answer: production of sulfates from H2S</div>
+    <div class="correct">Correct answer: glycolysis by purple bacteria</div>
+    <div class="question">3.The end product of glycolysis is</div>
+    <div class="correct">Your answer: NADH</div>
+    <div class="question">4.The final output of the Krebs cycle includes all of the following except</div>
+    <div class="wrong">Your answer: ATP</div>
+    <div class="correct">Correct answer: FADH<sub>2</sub></div>
+    <div class="question">5.The usefulness of fermentation as a means of deriving energy is limited because</div>
+    <div class="correct">Your answer: the end products are toxic to the producer</div>
+    <div id="comments">
+        <div class="comment-entry">Gary: Why fermentation is wrong?</div>
+        <div class="comment-entry">Bob: Can someone explain please?</div>
+    </div>
+    <textarea id="comments-input"></textarea>
+    <div class="save" onclick="postcomment()">Post comment</div>
+</div>
+<div class="quiz-box" id="quiz-box">
+    <div class="hide" onclick="hidequiz()">Hide</div>
+    <div class="question">1.When energy-depleted elements associated with a proton are accepted by an organic molecule, the process is called</div>
+    <select>
+        <option value="a">fermentation</option>
+        <option value="b">anaerobic</option>
+        <option value="c">aerobic</option>
+        <option value="d">catabolism</option>
+    </select>
+    <div class="question">2.An example of anaerobic would be</div>
+    <select>
+        <option value="a">production of sulfates from H2S</option>
+        <option value="b">production of methane by methanogens</option>
+        <option value="c">glycolysis by purple bacteria</option>
+        <option value="d">utilization of methane by methanogens</option>
+    </select>
+    <div class="question">3.The end product of glycolysis is</div>
+    <select>
+        <option value="a">NADH</option>
+        <option value="b">acetyl-CoA</option>
+        <option value="c">lactate</option>
+        <option value="d">pyruvate</option>
+    </select>
+    <div class="question">4.The final output of the Krebs cycle includes all of the following except</div>
+    <select>
+        <option value="a">NADP</option>
+        <option value="b">FADH<sub>2</sub></option>
+        <option value="c">ATP</option>
+        <option value="d">CO<sub>2</sub></option>
+    </select>
+    <div class="question">5.The usefulness of fermentation as a means of deriving energy is limited because</div>
+    <select>
+        <option value="a">it cannot generate enough ATP</option>
+        <option value="b">it produces too much NH2</option>
+        <option value="c">the end products are toxic to the producer</option>
+        <option value="d">it uses more energy than it produces</option>
+    </select>
+    <div class="save" onclick="hidequiz();alert('Well Done.You can now review your answer.');showreview()">Submit</div>
+</div>
+<div id="mail" class="quiz-box">
+    <div class="hide" onclick="hidemail()">Hide</div>
+    <div class="subject">
+        <div class="mail-text">To:</div>
+        <input type="text" class="mail-input">
+    </div>
+    <div class="subject">
+        <div class="mail-text">Subject:</div>
+        <input type="text" class="mail-input">
+    </div>
+    <textarea></textarea>
+    <div class="save" onclick="hidemail();alert('Mail successfully sent')">Send</div>
+</div>
+<div id="setting" class="quiz-box">
+    <div class="hide" onclick="hidesetting()">Hide</div>
+    <div class="subject">
+        <div class="mail-text">Change avatar:</div>
+        <input type="file" class="mail-input">
+    </div>
+    <div class="subject">
+        <div class="mail-text">Change name:</div>
+        <input type="text" class="mail-input">
+    </div>
+    <div class="subject">
+        <div class="mail-text">Short description:</div>
+    </div>
+    <textarea></textarea>
+    <div class="save" onclick="hidesetting();alert('Changes saved')">Save</div>
+</div>
+<div id="people-box" class="quiz-box">
+    <div class="hide" onclick="hidepeople()">Hide</div>
+    <div class="people-grid">
+        <div id="p1">
+            <div class="photo"></div>
+            <div class="name">Gary</div>
+            <div class="info">This is a short description of Gary profile</div>
+        </div>
+        <div id="p2">
+            <div class="photo"></div>
+            <div class="name">Bob</div>
+            <div class="info">This is a short description of Bob profile</div>
+        </div>
+        <div id="p3">
+            <div class="photo"></div>
+            <div class="name">Tom</div>
+            <div class="info">This is a short description of Tom profile</div>
+        </div>
+        <div id="p4">
+            <div class="photo"></div>
+            <div class="name">Clark</div>
+            <div class="info">This is a short description of Clark profile</div>
+        </div>
+        <div id="p5">
+            <div class="photo"></div>
+            <div class="name">George</div>
+            <div class="info">This is a short description of George profile</div>
+        </div>
+        <div id="p6">
+            <div class="photo"></div>
+            <div class="name">Alan</div>
+            <div class="info">This is a short description of Alan profile</div>
+        </div>
+    </div>
+</div>
+<div id="chat">
+    <div class="hide" onclick="hidechat()">Hide</div>
+    <div id="people">
+        <div class="online"></div><div class="person">Gary</div>
+        <div class="online"></div><div class="person">Bob</div>
+        <div class="online"></div><div class="person">Micheal</div>
+        <div class="online"></div><div class="person">Clark</div>
+        <div class="offline"></div><div class="person">George</div>
+        <div class="offline"></div><div class="person">Alan</div>
+        <div class="offline"></div><div class="person">Scott</div>
+    </div>
+    <div id="group">Group Chat</div>
+    <div id="chat-box">
+        <div class="receive">
+            <div class="receive-author">Tom</div>
+            <div class="receive-message">Hi, CS345ers</div>
+        </div>
+        <div class="receive">
+            <div class="send-author">Micheal</div>
+            <div class="send-message">Hi, Tom</div>
+        </div>
+        <div class="receive">
+            <div class="receive-author">Bob</div>
+            <div class="receive-message">Hi, Micheal</div>
+        </div>
+    </div>
+    <div class="chat-input">
+        <input id="input" type="text">
+        <div id="send" onclick="sendchat()">Send</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,490 @@
+body {
+    /*margin: 0;*/
+    background: #00B0FF;
+    color: white;
+    font-family: Arial, monospace;
+}
+
+header {
+    width: 100%;
+    height: 8vh;
+    padding: 0 2vh;
+    box-sizing: border-box;
+    border-radius: 1vh;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+header a {
+    cursor: pointer;
+    line-height: 8vh;
+    font-size: 2.5vh;
+    font-family: Arial, monospace;
+    transition: 150ms;
+}
+
+header a:hover {
+    font-size: 3vh;
+}
+
+header input {
+    float: right;
+    margin-left: 2vh;
+    width: 10vw;
+    height: 4vh;
+    margin-top: 2vh;
+    box-sizing: border-box;
+    border-radius: 1vh;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+textarea {
+    resize: none;
+}
+
+textarea:focus, select:focus, input:focus {
+    outline: none;
+}
+
+header .right {
+    cursor: pointer;
+    float: right;
+    margin-left: 2.5vh;
+    line-height: 8vh;
+    font-size: 2vh;
+    transition: 150ms;
+}
+
+header .right:hover {
+    font-size: 3vh;
+}
+
+main {
+    display: grid;
+    position: absolute;
+    top: 25vh;
+    left: 10vw;
+    width: 80vw;
+    height: 50vh;
+}
+
+#item1 {
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    line-height: 10vh;
+    text-align: center;
+    font-size: 6vh;
+}
+
+#item2 {
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#item3 {
+    grid-row: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#item4 {
+    grid-row: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+
+#item5 {
+    grid-row: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#item6 {
+    grid-row-start: 2;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    width: 60vw;
+    color: #00B0FF;
+    padding: 1vh;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#item2, #item3, #item4, #item5 {
+    cursor: pointer;
+    width: 20vw;
+    line-height: 10vh;
+    font-size: 3vh;
+    color: #00B0FF;
+    padding-left: 2vh;
+    box-sizing: border-box;
+    transition: 150ms;
+}
+
+#item2:hover, #item3:hover, #item4:hover, #item5:hover {
+    font-size: 4vh;
+}
+
+#chat {
+    position: absolute;
+    right: 1vh;
+    bottom: 1vh;
+    min-width: 20em;
+    width: 20vw;
+    height: 70vh;
+    color: #00B0FF;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 1vh;
+    overflow: hidden;
+}
+
+.hide {
+    cursor: pointer;
+    float: left;
+    width: 100%;
+    height: 3vh;
+    line-height: 3vh;
+    text-align: center;
+    color: white;
+    background: gray;
+}
+
+#people {
+    float: left;
+    width: 100%;
+    height: 28vh;
+    overflow-y: auto;
+}
+
+.person {
+    float: left;
+    width: calc(100% - 4vh);
+    height: 4vh;
+    line-height: 4vh;
+    padding: 0 2vh;
+    border-top: gray solid 1px;
+    box-sizing: border-box;
+}
+
+.online {
+    float: left;
+    width: 2vh;
+    height: 2vh;
+    margin: 1vh;
+    border-radius: 2vh;
+    border-top: gray solid 1px;
+    box-sizing: border-box;
+    background: #09bb07;
+}
+
+.offline {
+    float: left;
+    width: 2vh;
+    height: 2vh;
+    margin: 1vh;
+    border-radius: 2vh;
+    border-top: gray solid 1px;
+    box-sizing: border-box;
+    background: red;
+}
+
+#group {
+    float: left;
+    width: 100%;
+    height: 3vh;
+    line-height: 3vh;
+    text-align: center;
+    color: white;
+    background: gray;
+}
+
+#chat-box {
+    float: left;
+    width: 100%;
+    height: 32vh;
+    overflow-y: auto;
+}
+
+#chat-input {
+    float: left;
+    width: 100%;
+    height: 4vh;
+}
+
+#input {
+    float: left;
+    width: 80%;
+    height: 4vh;
+    box-sizing: border-box;
+    border: none;
+    padding-left: 2vh;
+}
+
+#message:focus {
+    outline: none;
+}
+
+#send {
+    cursor: pointer;
+    float: left;
+    width: 20%;
+    height: 4vh;
+    line-height: 4vh;
+    text-align: center;
+    color: white;
+    background: #09bb07;
+}
+
+.receive {
+    float: left;
+    width: 100%;
+    margin: 0.5vh 0;
+}
+
+.receive-author {
+    float: left;
+    width: 20%;
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    background: white;
+}
+
+.send-author {
+    float: right;
+    width: 20%;
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    background: white;
+}
+
+.receive-message {
+    float: left;
+    max-width: 75%;
+    line-height: 5vh;
+    padding: 0 0.5vh;
+    word-break: break-all;
+    box-sizing: border-box;
+    color: white;
+    background: #09bb07;
+}
+
+.send-message {
+    float: right;
+    max-width: 75%;
+    line-height: 5vh;
+    padding: 0 0.5vh;
+    word-break: break-all;
+    box-sizing: border-box;
+    color: white;
+    background: #09bb07;
+}
+
+.quiz {
+    cursor: pointer;
+    float: left;
+    width: 48%;
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    margin: 1vh 1%;
+    background: white;
+    transition: 150ms;
+}
+
+.quiz:hover {
+    font-size: 150%;
+}
+
+.quiz-review, .quiz-box {
+    position: absolute;
+    top: 50vh;
+    left: 10vw;
+    width: 80vw;
+    color: #28292c;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1vh;
+    padding: 1vh;
+    transform: translateY(-50%);
+}
+
+.quiz-review textarea {
+    float: left;
+    width: 100%;
+    height: 10vh;
+    box-sizing: border-box;
+}
+
+.save {
+    cursor: pointer;
+    float: left;
+    width: 100%;
+    height: 4vh;
+    line-height: 4vh;
+    text-align: center;
+    background: #09bb07;
+    box-sizing: border-box;
+}
+
+.quiz-box select {
+    float: left;
+    width: 100%;
+    height: 3vh;
+}
+
+.question {
+    float: left;
+    width: 100%;
+    height: 5vh;
+    line-height: 5vh;
+    margin-top: 2vh;
+}
+
+.correct {
+    color: #09bb07;
+}
+
+.wrong {
+    color: red;
+}
+
+.subject {
+    float: left;
+    width: 100%;
+    height: 5vh;
+}
+
+.mail-text {
+    float: left;
+    width: 20%;
+    height: 5vh;
+    line-height: 5vh;
+}
+
+.mail-input {
+    float: left;
+    width: 80%;
+    height: 5vh;
+    line-height: 5vh;
+    box-sizing: border-box;
+}
+
+.quiz-box textarea {
+    float: left;
+    width: 100%;
+    height: 30vh;
+    box-sizing: border-box;
+}
+
+.people-grid {
+    display: grid;
+    width: 100%;
+    height: 40vh;
+}
+
+#p1 {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+#p2 {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+#p3 {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+#p4 {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+#p5 {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+#p6 {
+    grid-row: 2;
+    grid-column: 3;
+}
+
+.photo {
+    float: left;
+    width: 8vh;
+    height: 12vh;
+    margin: 0 calc(50% - 4vh);
+    background: url("avatar.jpg");
+    background-size: cover;
+}
+
+.name {
+    float: left;
+    width: 100%;
+    height: 4vh;
+    line-height: 4vh;
+    text-align: center;
+    font-weight: bold;
+}
+
+.info {
+    float: left;
+    width: 100%;
+    height: 4vh;
+    line-height: 4vh;
+    text-align: center;
+}
+
+#comments {
+    float: left;
+    width: 100%;
+    height: 20vh;
+    overflow-y: auto;
+}
+
+.comment-entry {
+    float: left;
+    width: 100%;
+    height: 3vh;
+    line-height: 3vh;
+    background: white;
+    margin: 0.5vh 0;
+    text-overflow: ellipsis;
+}
+
+.right:hover .account, .right:hover .notification {
+    display: block;
+}
+
+.account {
+    display: none;
+    position: relative;
+    top: 1px;
+    width: 100%;
+    height: 8vh;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.line {
+    float: left;
+    width: 100%;
+    height: 4vh;
+    line-height: 4vh;
+    font-size: 2vh;
+}
+
+.notification {
+    display: none;
+    position: relative;
+    top: 1px;
+    width: 100%;
+    height: 20vh;
+    background: rgba(255, 255, 255, 0.5);
+}
